@@ -11,3 +11,4 @@ Shell basics
 9-firstdirdeletion deletes the directory /tmp/my_first_directory
 10-back changes the working directory to the previous one
 11-lists lists all files, including hidden files, in the current directory, the parent of the working directory and the /boot directory (in this order) in long format
+12-file_type prints the type of the file /tmp/iamafile
