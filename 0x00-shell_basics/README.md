@@ -9,3 +9,4 @@ Shell basics
 7-movethatfile moves the file /tmp/betty to the directory /tmp/my_first_directory
 8-firstdelete deletes the file /tmp/my_first_directory/betty
 9-firstdirdeletion deletes the directory /tmp/my_first_directory
+10-back changes the working directory to the previous one
