@@ -9,3 +9,4 @@ Shell permissions
 7-everybody adds execute permission to the owner, the group owner and the other users, to the file hello.
 8-James_Bond sets the permission for the file hello as, no permissions for the owner and group, and all permissions for other users.
 9-John_Doe sets the permissions for the file hello as, all permissions for the owner; read and execute permissions for the group; write and execute permissions for others.
+10-mirror_permissions sets the mode of the file hello the same as the file olleh mode.
