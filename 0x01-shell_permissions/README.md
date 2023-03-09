@@ -14,3 +14,4 @@ Shell permissions
 12-directory_permissions creates a directory, my_dir, with permissions 751 in the working directory.
 13-change_group changes the group owner to school for the file hello.
 100-change_owner_and_group changes the owner to vincent and the group to staff for all the files and directories in the working directory.
+101-symbolic_link_permissions changes the owner and the group owner of [underscore]hello to vincent and staff respectively.
