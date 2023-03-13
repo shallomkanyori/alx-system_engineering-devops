@@ -24,5 +24,4 @@
 - 21-reverse reverses its input
 - 22-users_and_homes displays all users and their home directories, sorted by users
 
-- 100-empty_casks finds all empty files and directories in the current directory and its subdirectories
-- 101-gifs lists all the files with a .gif extension in the current directory and all its subdirectories
+-100-empty_casks finds all empty files and directories in the current directory and its subdirectories
