@@ -14,3 +14,5 @@
 - 11-binary_to_decimal converts the binary value stored in the environment variable BINARY to decimal
 - 12-combinations prints all possible combinations of two lowercase letters, except 'oo'
 - 13-print_float prints a number with two decimal places, followed by a newline
+
+- 100-decimal_to_hexadecimal converts a number stored in the environment variable DECIMAL from decimal to hexadecimal
