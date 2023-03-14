@@ -17,3 +17,4 @@
 
 - 100-decimal_to_hexadecimal converts a number stored in the environment variable DECIMAL from decimal to hexadecimal
 - 101-rot13 encodes and decodes text using the rot13 encryption
+- 102-odd prints every other line from the input starting with the first line
