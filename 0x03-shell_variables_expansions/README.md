@@ -16,3 +16,4 @@
 - 13-print_float prints a number with two decimal places, followed by a newline
 
 - 100-decimal_to_hexadecimal converts a number stored in the environment variable DECIMAL from decimal to hexadecimal
+- 101-rot13 encodes and decodes text using the rot13 encryption
