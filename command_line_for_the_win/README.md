@@ -15,19 +15,19 @@ Create a screenshot, showing that you completed the required levels. Push this s
 1. Take the screenshots of the completed levels as mentioned in the requirements.
 2. Open a terminal or command prompt on your local machine.
 3. Use the `SFTP` command-line tool to establish a connection to the sandbox environment:
-        ```
-        sftp 3b84b4ffb1bd@3b84b4ffb1bd.923e441a.alx-cod.online
-        3b84b4ffb1bd@3b84b4ffb1bd.923e441a.alx-cod.online's password:
-        Connected to 3b84b4ffb1bd.923e441a.alx-cod.online.
-        sftp>
-        ```
+	```
+	sftp 3b84b4ffb1bd@3b84b4ffb1bd.923e441a.alx-cod.online
+	3b84b4ffb1bd@3b84b4ffb1bd.923e441a.alx-cod.online's password:
+	Connected to 3b84b4ffb1bd.923e441a.alx-cod.online.
+	sftp>
+	```
 4. Navigate to the directory where you want to upload the screenshots:
-        ```
-        sftp> cd /root/alx-system_engineering-devops/command_line_for_the_win
-        sftp> pwd
-        Remote working directory: /root/alx-system_engineering-devops/command_line_for_the_win
-        sftp>
-        ```
+	```
+	sftp> cd /root/alx-system_engineering-devops/command_line_for_the_win
+	sftp> pwd
+	Remote working directory: /root/alx-system_engineering-devops/command_line_for_the_win
+	sftp>
+	```
 5. Use the SFTP `put` command to upload the screenshots from your local machine to the sandbox environment:
 	```
 	sftp> put 0-first_9_tasks.png
