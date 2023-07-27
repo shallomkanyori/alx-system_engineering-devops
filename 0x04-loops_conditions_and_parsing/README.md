@@ -56,3 +56,10 @@
 - Displays `Buzz` when the number is a multiple of 5
 - Otherwise, displays the number
 - In a list format
+
+####Task 11: Read and cut
+[100-read_and_cut](100-read_and_cut) is a Bash script that displays the content of the file `/etc/passwd`.
+It displays
+- username
+- user id
+- Home directory path for the user
