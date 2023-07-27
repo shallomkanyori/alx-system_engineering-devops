@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Displays user info from /etc/passwd in a story form
+
+filename="/etc/passwd"
+
+while IFS=: read -r name passwd uid gid info homedir shell; do
+	echo -n "The user $name is part of the $gid gang, lives in $homedir and rides"
+	echo -n " $shell. $uid's place is protected by the passcode $passwd, more"
+	echo " info about the user here: $info"
+done < "$filename"
