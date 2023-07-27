@@ -31,3 +31,9 @@
 [7-clock](7-clock) is a Bash script that displays the time for 12 hours and 59 minutes:
 - display hours from 0 to 12
 - display minutes from 1 to 59
+
+####Task 8: For ls
+[8-for_ls](8-for_ls) is a Bash script that displays the content of the current directory:
+- In a list format
+- Where only the part of the name after the first dash is displayed
+- Does not display hidden files
