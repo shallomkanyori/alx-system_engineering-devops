@@ -57,6 +57,7 @@
 - Otherwise, displays the number
 - In a list format
 
+
 ####Task 11: Read and cut
 [100-read_and_cut](100-read_and_cut) is a Bash script that displays the content of the file `/etc/passwd`.
 It displays
@@ -74,3 +75,10 @@ Format: `The user USERNAME is part of the GROUP_ID gang, lives in HOME_DIRECTORY
 	- in a list format
 - Uses `awk`
 - Does not use `while`, `for`, `until` and `cut`
+
+###Task 14: Dig the data
+[103-dig_the-data](103-dig_the-data) is a Bash script that groups visitors by IP and HTTP status code, and displays this data.
+- Format : `OCCURENCE_NUMBER IP HTTP_CODE`
+	- In list format
+	- Ordered from the greatest to the lowest number of occurrences
+- Uses `awk`

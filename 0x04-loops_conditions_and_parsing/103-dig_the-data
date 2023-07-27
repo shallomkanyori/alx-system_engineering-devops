@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Displays the frequency of visitor IP and HTTP status code from an apache log
+# file
+
+awk -F' ' '{ print $1,$9 }' apache-access.log | sort -n | uniq -c | sort -nr
