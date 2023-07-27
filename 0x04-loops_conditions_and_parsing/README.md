@@ -11,3 +11,6 @@
 
 ####Task 3: Until Best School loop
 [3-until_best_school](3-until_best_school) is a Bash script that displays `Best School` 10 times using the `until` loop
+
+####Task 4: If 9, say Hi!
+[4-if_9_say_hi](4-if_9_say_hi) is a Bash script that displays `Best School` 10 times using a `while` loop but also prints `Hi` after the 9th iteration
