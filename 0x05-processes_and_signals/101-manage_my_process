@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+# Manages manage_my_process
+
+if [[ $# -ne 1 ]]; then
+	echo "Usage: manage_my_process {start|stop|restart}"
+	exit 1
+fi
+
+arg=$1
+pfile="/var/run/my_process.pid"
+
+function start()
+{
+	./manage_my_process &
+	sudo bash -c "echo $! > $pfile"
+}
+
+function stop()
+{
+	if [[ -e $pfile ]]; then
+		p=$(cat "$pfile")
+		if [[ $p ]]; then kill "$p"; fi
+		sudo rm "$pfile"
+	fi
+}
+
+
+if [[ $arg = "start" ]]; then
+	start
+	echo "manage_my_process started"
+
+elif [[ $arg = "stop" ]]; then
+	stop
+	echo "manage_my_process stopped"
+
+elif [[ $arg = "restart" ]]; then
+	stop
+	start
+
+	echo "manage_my_process restarted"
+
+else
+	echo "Usage: manage_my_process {start|stop|restart}"
+	exit 1
+fi
