@@ -63,3 +63,7 @@
 	- Creates a file containing its PID in `/var/run/my_process.pid`
 	- Displays `manage_my_process restarted`
 - Displays `Usage: manage_my_process {start|stop|restart}` if any other argument or no argument is passed
+
+####Task 11: Zombie
+[102-zombie.c](102-zombie.c) is a C program that creates 5 zombie processes.
+- For every zombie process created, it displays `Zombie process created, PID: ZOMBIE_PID`
