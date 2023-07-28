@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Creates file containing its PID. Displays string indefinitely. Displays two
+# other strings on SIGTERM and SIGINT signals respectively. Deletes created
+# file on SIGQUIT or SIGTERM signal.
+
+sudo bash -c "echo $$ > '/var/run/myscript.pid'"
+
+function delete_exit()
+{
+	sudo rm "/var/run/myscript.pid"
+	exit
+}
+
+trap "echo 'Y U no love me?!'; exit" SIGINT
+trap "echo 'I hate the kill command'; delete_exit" SIGTERM
+trap delete_exit SIGQUIT
+
+while true; do
+	echo "To infinity and beyond"
+done
