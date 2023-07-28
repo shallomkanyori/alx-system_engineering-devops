@@ -11,3 +11,6 @@
 
 ####Task 2:  Show your Bash PID
 [2-show_your_bash_pid](2-show_your_bash_pid) is a Bash script that displays lines containing the `bash` word, thus allowing you to easily get the PID of your Bash process.
+
+###Task 3: Show your Bash PID made easy
+[3-show_your_bash_pid_made_easy](3-show_your_bash_pid_made_easy) is a Bash script that displays the PID, along with the process name, of processes whose name contain the word `bash` without using  `ps`.
