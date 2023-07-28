@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <errno.h>
 #include <sys/types.h>
 
 /**
@@ -15,7 +14,6 @@ int infinite_while(void)
 	{
 		sleep(1);
 	}
-
 	return (0);
 }
 
@@ -32,20 +30,18 @@ int main(void)
 	for (i = 0; i < 5; i++)
 	{
 		pid = fork();
-		if (pid < 0)
+		if (pid > 0)
 		{
-			perror("fork");
-			exit(errno);
-		}
-		else if (pid == 0)
-		{
-			exit(0);
+			printf("Zombie process created, PID: %d\n", pid);
+			sleep(1);
 		}
 		else
 		{
-			printf("Zombie process created, PID: %d\n", pid);
+			exit(0);
 		}
 	}
 
 	infinite_while();
+
+	return (0);
 }
