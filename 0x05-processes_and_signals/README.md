@@ -24,3 +24,9 @@
 
 ###Task 6: Stop me if you can
 [6-stop_me_if_you_can](6-stop_me_if_you_can) is a Bash script that stops `4-to_infinity_and_beyond` process without using `kill` or `killall`
+
+####Task 7: Highlander
+[7-highlander](7-highlander) is a Bash script that displays:
+- `To infinity and beyond` indefinitely
+- With a `sleep 2` in between each iteration
+- `I am invincible!!!` when receiving a SIGTERM signal
