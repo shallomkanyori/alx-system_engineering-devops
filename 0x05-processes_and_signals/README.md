@@ -18,3 +18,6 @@
 ####Task 4: To infinity and beyond
 [4-to_infinity_and_beyond](4-to_infinity_and_beyond) is a Bash script that displays `To infinity and beyond` indefinitely.
 - In between each iteration of the loop, `sleep 2`
+
+####Task5. Don't stop me now!
+[5-dont_stop_me_now](5-dont_stop_me_now) is a Bash script that stops `4-to_infinity_and_beyond` process using `kill`
