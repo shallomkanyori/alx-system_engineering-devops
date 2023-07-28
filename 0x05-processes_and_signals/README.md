@@ -30,3 +30,6 @@
 - `To infinity and beyond` indefinitely
 - With a `sleep 2` in between each iteration
 - `I am invincible!!!` when receiving a SIGTERM signal
+
+####Task 8: Beheaded process
+[8-beheaded_process](8-beheaded_process) is a Bash script that kills the process `7-highlander`.
