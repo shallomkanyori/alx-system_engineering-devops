@@ -20,3 +20,6 @@
 
 ####Task 6: Call me maybe
 [6-phone_number.rb](6-phone_number.rb) is a Ruby script that accepts one argument and passes it to a regular expression that matches a 10 digit phone number.
+
+####Task 7: OMG WHY ARE YOU SHOUTING?
+[7-OMG_WHY_ARE_YOU_SHOUTING.rb](7-OMG_WHY_ARE_YOU_SHOUTING.rb) is a Ruby script that accepts one argument and passes it to a regular expression that matches only capital letters.
