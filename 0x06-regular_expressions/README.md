@@ -23,3 +23,7 @@
 
 ####Task 7: OMG WHY ARE YOU SHOUTING?
 [7-OMG_WHY_ARE_YOU_SHOUTING.rb](7-OMG_WHY_ARE_YOU_SHOUTING.rb) is a Ruby script that accepts one argument and passes it to a regular expression that matches only capital letters.
+
+
+####Task 8: Textme
+[100-textme.rb](100-textme.rb) is a Ruby script that accepts one argument that is a log from a TextMe app text messages transactions log file and passes it into a regex that outputs the sender, receiver and flags that were used for that log in the format `[SENDER],[RECEIVER],[FLAGS]`.
