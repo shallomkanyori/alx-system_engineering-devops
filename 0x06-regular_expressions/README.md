@@ -14,3 +14,6 @@
 
 ####Task 5: Repetition Token #3
 [4-repetition_token_3.rb](4-repetition_token_3.rb) is a Ruby script that accepts one argument and passes it to a regular expression that matches the pattern `^hbt*n$`.
+
+####Task 6: Not quite HBTN yet
+[5-beginning_and_end.rb](5-beginning_and_end.rb) is a Ruby script that accepts one argument and passes it to a regular expression that mathes a string that begins with `h` and ends with `n` and can have any single character in between.
