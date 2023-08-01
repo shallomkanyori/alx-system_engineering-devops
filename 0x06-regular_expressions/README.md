@@ -11,3 +11,6 @@
 
 ####Task 4: Repetition Token #2
 [3-repetition_token_2.rb](3-repetition_token_2.rb) is a Ruby script that accepts one argument and passes it to a regular expression that matches the pattern `^hbt+n$`.
+
+####Task 5: Repetition Token #3
+[4-repetition_token_3.rb](4-repetition_token_3.rb) is a Ruby script that accepts one argument and passes it to a regular expression that matches the pattern `^hbt*n$`.
