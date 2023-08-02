@@ -53,3 +53,8 @@ Which statement is correct for the UDP box:
 Which statement is correct for the TCP worker:
 1. `Have you received boxes x, y, z?`
 2. `May I increase the rate at which I am sending you boxes?`
+
+##Task 4: TCP and UDP ports
+[4-TCP_and_UDP_ports](4-TCP_and_UDP_ports) is a Bash script that displays listening ports:
+- Only shows listening sockets
+- Shows the PID and name of the program to which each socket belongs
