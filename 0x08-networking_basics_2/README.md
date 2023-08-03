@@ -7,3 +7,6 @@
 
 ####Task 1: Show attached IPs
 [1-show_attached_IPs](1-show_attached_IPs) is a Bash script that displays all active IPv4 IPs on the machine it's executed on.
+
+###Task 2: Port listening on localhost
+[100-port_listening_on_localhost](100-port_listening_on_localhost) is a Bash script that listens on port `98` on `localhost`.
