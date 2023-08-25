@@ -62,3 +62,14 @@ Requirements:
 	- Why terminating SSL at the load balancer level is an issue: Communication between the load balancer and servers will not be encrypted exposing the data to hackers.
 	- Why having only one MySQL server capable of accepting writes is an issue: While the replicas serve as backups in the case the primary server fails, during normal operation, that one primary server shoulders all write requests and this reduces scalability.
 	- Why having servers with all the same components (database, web server and application server) might be a problem: Here are some issues with the application's current configuration. If one of a server's components fails, it may affect the entire server. As the application scales, it becomes more challenging and complex to manage and coordinate identical servers. Troubleshooting issues can be challenging as well because the servers are identical.
+
+
+#### Task 3: Scale up
+[3-scale_up](3-scale_up) contains the line to the design for a web infrastructure that hosts the website www.foobar.com that is secured, serves encrypted traffic, and is monitored, with individual servers for each components.
+Requirements:
+- The following components are added:
+	- 1 server
+	- 1 load-balancer (HAproxy) configured as cluster with the other one
+	- Split components (web server, application server, database) with their own server
+- Some specifics about this infrastructure:
+	- For every additional element, why you are adding it: The additional load balancer provides redundancy. Should any of the load balancers fail, the other one can continue routing traffic. Each component now has its own server simplifying scaling. The load balancers are also reverse proxies, routing traffic to the appropriate server, first based on the type of content requested (e.g. web server for static content) and then based on the configured load-balancing algorithm.
