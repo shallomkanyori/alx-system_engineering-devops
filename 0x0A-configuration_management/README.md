@@ -14,3 +14,9 @@ Requirements:
 Requirements:
 - Install `flask`
 - Version `2.1.0`
+
+#### Task 2
+[2-execute_a_command.pp](2-execute_a_command.pp) is a Puppet manifest that kills a process named `killmenow`.
+Requirements:
+- Uses the `exec` Puppet resource
+- Uses `pkill`
