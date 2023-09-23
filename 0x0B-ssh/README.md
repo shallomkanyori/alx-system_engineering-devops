@@ -19,3 +19,6 @@ Requirements:
 Requirements:
 - Configured to use the private key `~/.ssh/school`
 - Configured to refuse to authenticate using a password
+
+#### Task 4
+Add the given SSH public key to the given server.
