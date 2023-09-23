@@ -13,3 +13,9 @@ Requirements:
 - Name of the created private key is `school`
 - Number of bits in the created key is 4096
 - The created key is protected by the passphrase `betty`
+
+#### Task 3
+[2-ssh_config](2-ssh_config) is a copy of the SSH client configuration.
+Requirements:
+- Configured to use the private key `~/.ssh/school`
+- Configured to refuse to authenticate using a password
