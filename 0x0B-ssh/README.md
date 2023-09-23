@@ -6,3 +6,10 @@ Requirements:
 - Only uses `ssh` single-character flags
 - Does not use `-l`
 - Does not handle the case of a private key protected by a passphrase
+
+#### Task 2
+[1-create_ssh_key_pair](1-create_ssh_key_pair) is a Bash script that creates an RSA key pair.
+Requirements:
+- Name of the created private key is `school`
+- Number of bits in the created key is 4096
+- The created key is protected by the passphrase `betty`
