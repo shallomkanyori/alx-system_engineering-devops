@@ -22,3 +22,9 @@ Requirements:
 
 #### Task 4
 Add the given SSH public key to the given server.
+
+#### Task 5
+[100-puppet_ssh_config.pp](100-puppet_ssh_config.pp) is a Puppet manifest that makes changes in the SSH configuration file.
+Requirements:
+- Configures to use the private key `~/.ssh/school`
+- Configures to refuse to authenticate using a password
