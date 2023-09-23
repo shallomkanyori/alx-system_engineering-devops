@@ -1,10 +1,16 @@
 # Sets up the SSH client configuration file
 file_line {'Turn off passwd auth':
-  path => '~/.ssh/config',
-  line => 'PasswordAuthentication no',
+  path               => '/etc/ssh/ssh_config',
+  line               => '    PasswordAuthentication no',
+  match              => '^[#]+[\s]*(?i)PasswordAuthentication[\s]+(yes|no)$',
+  replace            => true,
+  append_on_no_match => true,
 }
 
 file_line {'Declare identity file':
-  path => '~/.ssh/config',
-  line =>  'IdentityFile ~/.ssh/school',
+  path               => '/etc/ssh/ssh_config',
+  line               => '    IdentityFile ~/.ssh/school',
+  match              => '^[#]+[\s]*(?i)IdentityFile[\s]+~/.ssh/id_rsa$',
+  replace            => true,
+  append_on_no_match => true,
 }
