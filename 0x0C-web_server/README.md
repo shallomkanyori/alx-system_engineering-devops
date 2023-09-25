@@ -30,3 +30,9 @@ Requirements:
 [3-redirection](3-redirection) builds on [1-install_nginx_web_server](1-install_nginx_web_server) by configuring the Nginx server so that `/redirect_me` is redirecting to another page.
 Requirements:
 - The redirection must be a “301 Moved Permanently”
+
+#### Task 4
+[4-not_found_page_404](4-not_found_page_404) builds on [3-redirection](3-redirection) by congifuering the Nginx server to have a custom 404 page.
+Requirements:
+- The page returns an HTTP 404 error code
+- The page contains the string `Ceci n'est pas une page`
