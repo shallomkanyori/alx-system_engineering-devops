@@ -20,8 +20,13 @@ Requirements:
 - When querying Nginx at its root `/` with a GET request (requesting a page) using `curl`, it returns a page that contains the string `Hello World!`
 - Does not use `systemctl` for restarting `nginx`
 
-#### Task 4
+#### Task 2
 [2-setup_a_domain_name](2-setup_a_domain_name) contains the domain name provided by .TECH Domains
 Requirements:
 - Contains only the domain name
 - DNS records configure with an A entry pointing the root domain to the server's IP address
+
+#### Task 3
+[3-redirection](3-redirection) builds on [1-install_nginx_web_server](1-install_nginx_web_server) by configuring the Nginx server so that `/redirect_me` is redirecting to another page.
+Requirements:
+- The redirection must be a “301 Moved Permanently”

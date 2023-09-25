@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# Installs and configures a nginx web server
+
+# Install nginx
+apt-get update
+apt-get -y install nginx
+
+service nginx start
+
+# Change landing page
+echo "Hello World!" > /var/www/html/index.html
+
+# Default server configuration
+cat << 'EOF' > /etc/nginx/sites-available/default
+# Defualt server configuration
+#
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+	
+	server_name _;
+	
+	location /redirect_me {
+		return 301 https://www.youtube.com/watch?v=-BE6GyHcASE;
+	}
+	
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
+EOF
+
+# Apply changed configurations
+service nginx restart
