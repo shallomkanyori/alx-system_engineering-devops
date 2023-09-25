@@ -19,3 +19,9 @@ Requirements:
 - Nginx listening on port 80
 - When querying Nginx at its root `/` with a GET request (requesting a page) using `curl`, it returns a page that contains the string `Hello World!`
 - Does not use `systemctl` for restarting `nginx`
+
+#### Task 4
+[2-setup_a_domain_name](2-setup_a_domain_name) contains the domain name provided by .TECH Domains
+Requirements:
+- Contains only the domain name
+- DNS records configure with an A entry pointing the root domain to the server's IP address
