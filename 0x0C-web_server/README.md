@@ -36,3 +36,10 @@ Requirements:
 Requirements:
 - The page returns an HTTP 404 error code
 - The page contains the string `Ceci n'est pas une page`
+
+#### Task 5
+[7-puppet_install_nginx_web_server.pp](7-puppet_install_nginx_web_server.pp) is a Puppet manifest that installs and configures an Nginx server.
+Requirements:
+- Nginx is configured to listen on port `80`
+- When querying Nginx at its root `/` with a GET request (requesting a page) using `curl`, it returns a page that contains the string `Hello World!`
+- Querying `/redirect_me` performs a “301 Moved Permanently” redirect
