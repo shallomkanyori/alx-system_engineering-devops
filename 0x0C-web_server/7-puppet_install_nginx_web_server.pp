@@ -9,7 +9,7 @@ package {'nginx':
 # Landing page
 file {'/var/www/html/index.html':
   ensure  => file,
-  content => 'Hello World!\n',
+  content => "Hello World!\n",
   require => Package['nginx'],
   mode    => '0755',
 }
