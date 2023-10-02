@@ -1,9 +1,17 @@
 # Installs and configures a Nginx server with custom header
 
+# Update
+exec {'update':
+  provider => shell,
+  command  => 'sudo apt-get update',
+  before   => Exec['nginx'],
+}
+
 # Install Nginx
-package {'nginx':
-  ensure   => installed,
-  provider => 'apt',
+exec {'nginx':
+  command  => 'sudo apt-get install nginx',
+  provider => shell,
+  before   => Exec['conf'],
 }
 
 # Configure server
@@ -18,7 +26,7 @@ server {
 	
 	server_name _;
 
-  add_header X-Served-By $(hostname);
+  add_header X-Served-By $HOSTNAME;
 	
 	location / {
 		try_files \$uri \$uri/ =404;
@@ -28,14 +36,13 @@ EOF
 '
 
 exec {'conf':
-  command => $config_cmd,
-  path    => '/usr/bin:/usr/sbin:/bin',
-  require => Package['nginx'],
-  before  => Exec['nginx_restart'],
+  command  => $config_cmd,
+  provider => shell,
+  before   => Exec['nginx_restart'],
 }
 
 # Nginx service
 exec {'nginx_restart':
-  command => 'service nginx restart',
-  path    => '/usr/bin:/usr/sbin:/bin',
+  command  => 'sudo service nginx restart',
+  provider => shell,
 }
