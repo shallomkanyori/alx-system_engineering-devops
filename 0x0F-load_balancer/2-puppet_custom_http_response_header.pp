@@ -6,14 +6,6 @@ package {'nginx':
   provider => 'apt',
 }
 
-# Landing page
-file {'/var/www/html/index.html':
-  ensure  => file,
-  content => "Hello World!\n",
-  require => Package['nginx'],
-  mode    => '0755',
-}
-
 # Nginx service
 service {'nginx':
   ensure    => running,
@@ -33,10 +25,6 @@ server {
 	server_name _;
 
   add_header X-Served-By ${hname};
-	
-	location /redirect_me {
-		return 301 https://www.youtube.com/watch?v=-BE6GyHcASE;
-	}
 	
 	location / {
 		try_files \$uri \$uri/ =404;
