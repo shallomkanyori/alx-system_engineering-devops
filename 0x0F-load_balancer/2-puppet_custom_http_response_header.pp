@@ -31,7 +31,7 @@ server {
 	index index.html index.htm index.nginx-debian.html;
 	
 	server_name _;
-  
+
   add_header X-Served-By $(hostname);
 	
 	location /redirect_me {
@@ -47,5 +47,6 @@ EOF
 
 exec {'default.conf':
   command => $config_cmd,
+  path    => '/usr/bin:/usr/sbin:/bin',
   require => Package['nginx'],
 }
