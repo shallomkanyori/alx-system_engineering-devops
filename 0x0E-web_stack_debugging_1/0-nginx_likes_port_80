@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Restarts nginx server to listen on port 80
-sed -iE 's/^[[:blank:]]+listen 8080 default_server;$/\tlisten 80 default_server;/' /etc/nginx/sites-enabled/default
-sed -iE 's/^[[:blank:]]+listen \[::\]:8080 default_server ipv6only=on;$/\tlisten \[::\]:80 default_server ipv6only=on;/' /etc/nginx/sites-enabled/default
+sed -i 's/\slisten 8080 default_server;/\tlisten 80 default_server;/' /etc/nginx/sites-enabled/default
+sed -i 's/\slisten \[::\]:8080 default_server ipv6only=on;/\tlisten \[::\]:80 default_server ipv6only=on;/' /etc/nginx/sites-enabled/default
+kill 26
 service nginx restart
