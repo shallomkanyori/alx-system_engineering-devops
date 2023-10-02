@@ -17,7 +17,7 @@ file {'/var/www/html/index.html':
 # Nginx service
 service {'nginx':
   ensure    => running,
-  subscribe => File['default.conf'],
+  subscribe => [File['default.conf'], Exec['custom_header']],
 }
 
 # Configure server
