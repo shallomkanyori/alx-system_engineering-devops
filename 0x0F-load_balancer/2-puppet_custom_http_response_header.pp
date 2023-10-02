@@ -3,13 +3,13 @@
 # Update
 exec {'update':
   provider => shell,
-  command  => 'sudo apt-get update',
+  command  => 'sudo apt-get -y update',
   before   => Exec['nginx'],
 }
 
 # Install Nginx
 exec {'nginx':
-  command  => 'sudo apt-get install nginx',
+  command  => 'sudo apt-get -y install nginx',
   provider => shell,
   before   => Exec['conf'],
 }
