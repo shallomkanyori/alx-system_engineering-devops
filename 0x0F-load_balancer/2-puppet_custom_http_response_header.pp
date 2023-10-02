@@ -21,8 +21,7 @@ service {'nginx':
 }
 
 # Configure server
-$hname = $hostname
-$config = "# Defualt server configuration
+$config = '# Defualt server configuration
 server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
@@ -31,8 +30,6 @@ server {
 	index index.html index.htm index.nginx-debian.html;
 	
 	server_name _;
-
-  add_header X-Served-By ${hname};
 	
 	location /redirect_me {
 		return 301 https://www.youtube.com/watch?v=-BE6GyHcASE;
@@ -42,11 +39,18 @@ server {
 		try_files \$uri \$uri/ =404;
 	}
 }
-"
+'
 
 file {'default.conf':
   ensure  => file,
   path    => '/etc/nginx/sites-available/default',
   require => Package['nginx'],
   content => $config,
+}
+
+# Add custom header
+exec {'custom_header':
+  command  => 'sed -i "s/\sserver_name _;/\tserver_name _;\n\tadd_header X-Served-By $(hostname);/" /etc/nginx/sites-available/default',
+  provider => shell,
+  require  =>  File['default.conf'],
 }
