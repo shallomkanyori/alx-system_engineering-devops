@@ -12,10 +12,10 @@ apt-get -y install haproxy=2.0.\*
 service haproxy start
 
 # Configure HAproxy
-cat << EOF >> /etc/haproxy/haproxy.cfg
+cat << 'EOF' >> /etc/haproxy/haproxy.cfg
 
 frontend web-frontend
-	bind: *:80
+	bind *:80
 	mode http
 	default_backend web-servers
 
