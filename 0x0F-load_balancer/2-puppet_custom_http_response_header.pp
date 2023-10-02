@@ -31,11 +31,11 @@ exec {'conf':
   command => $config_cmd,
   path    => '/usr/bin:/usr/sbin:/bin',
   require => Package['nginx'],
+  before  => Exec['nginx_restart'],
 }
 
 # Nginx service
 exec {'nginx_restart':
   command => 'service nginx restart',
   path    => '/usr/bin:/usr/sbin:/bin',
-  after   =>  Exec['conf'],
 }
