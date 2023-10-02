@@ -11,3 +11,9 @@
 - Configures HAproxy so that it sends traffic to `web-01` and `web-02` servers
 - Distributes requests using a roundrobin algorithm
 - Ensures that HAproxy can be managed via an init script
+
+
+#### Task 3
+[2-puppet_custom_http_response_header.pp](2-puppet_custom_http_response_header.pp) is a Puppet manifest that configures an Nginx server with a custom HTTP response header on a new Ubuntu machine.
+- The name of the custom HTTP header is `X-Served-By`
+- The value of the custom HTTP header is the hostname of the server Nginx is running on
