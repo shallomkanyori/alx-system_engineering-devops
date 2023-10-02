@@ -21,6 +21,7 @@ service {'nginx':
 }
 
 # Configure server
+$hname = $hostname
 $config = "# Defualt server configuration
 server {
 	listen 80 default_server;
@@ -31,7 +32,7 @@ server {
 	
 	server_name _;
 
-  add_header X-Served-By ${trusted['hostname']};
+  add_header X-Served-By ${hname};
 	
 	location /redirect_me {
 		return 301 https://www.youtube.com/watch?v=-BE6GyHcASE;
