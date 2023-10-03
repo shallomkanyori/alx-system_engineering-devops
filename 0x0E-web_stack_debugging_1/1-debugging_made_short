@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Restarts nginx server to listen on port 80
 sed -i 's/\(.*\)8080\(.*\)/\180\2/' /etc/nginx/sites-enabled/default
-pkill nginx
-eval "$(command -v nginx)"
+service nginx start
+kill -9 "$(cat /run/nginx.pid)"
