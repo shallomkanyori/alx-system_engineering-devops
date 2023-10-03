@@ -2,5 +2,5 @@
 # Restarts nginx server to listen on port 80
 sed -i 's/\slisten 8080 default_server;/\tlisten 80 default_server;/' /etc/nginx/sites-enabled/default
 sed -i 's/\slisten \[::\]:8080 default_server ipv6only=on;/\tlisten \[::\]:80 default_server ipv6only=on;/' /etc/nginx/sites-enabled/default
-kill 26
+pkill nginx
 service nginx restart
