@@ -27,3 +27,10 @@ Requirements:
 - HAproxy is listening on port TCP `443`
 - HAproxy is accepting SSL traffic
 - HAproxy serves encrypted traffic that will return the `/` of the web server
+
+#### Task 2
+[100-redirect_http_to_https](100-redirect_http_to_https) is a copy of the HAproxy config file that configures HAproxy to automatically redirect HTTP traffic to HTTPS.
+Requirements:
+- This is transparent to the user
+- HAproxy returns a 301
+- HAproxy redirects HTTP traffic to HTTPS
