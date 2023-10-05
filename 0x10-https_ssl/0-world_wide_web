@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Displays information about subdomains
+
+display () {
+	url="$2.$1"
+	res=$(dig "$url" | grep -A1 'ANSWER SECTION:')
+
+	typ=$(echo "$res" | awk '{printf "%s", $4}')
+	dst=$(echo "$res" | awk '{printf "%s", $5}')
+	echo "The subdomain $2 is a $typ record and points to $dst"
+}
+
+if [ "$2" ]; then
+	display "$1" "$2"
+else
+	display "$1" www
+	display "$1" lb-01
+	display "$1" web-01
+	display "$1" web-02
+fi
