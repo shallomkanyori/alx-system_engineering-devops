@@ -20,3 +20,10 @@
 	- Empty parameters
 	- Nonexistent domain names
 	- Nonexistent subdomains
+
+#### Task 1
+[1-haproxy_ssl_termination](1-haproxy_ssl_termination) is a copy of the HAproxy config file that configures HAproxy to accept encrypted traffic for the subdomain `www`.
+Requirements:
+- HAproxy is listening on port TCP `443`
+- HAproxy is accepting SSL traffic
+- HAproxy serves encrypted traffic that will return the `/` of the web server
