@@ -7,4 +7,6 @@ sed -Ei 's/#user .*/user nginx;/' /etc/nginx/nginx.conf
 
 sed -Ei 's/( |:)80 /\18080 /' /etc/nginx/sites-enabled/default
 
+pkill apache
+
 sudo -u nginx service nginx restart
