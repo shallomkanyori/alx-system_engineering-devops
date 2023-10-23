@@ -25,3 +25,10 @@ Requirements:
 - Records all tasks that are owned by this employee
 - Format: `{ "USER_ID": [{"task": "TASK_TITLE", "completed": TASK_COMPLETED_STATUS, "username": "USERNAME"}, {"task": "TASK_TITLE", "completed": TASK_COMPLETED_STATUS, "username": "USERNAME"}, ... ]}`
 - File name: `USER_ID.json`
+
+#### Task 3
+[3-dictionary_of_list_of_dictionaries.py](3-dictionary_of_list_of_dictionaries.py) is Python script that extends [0-gather_data_from_an_API.py](0-gather_data_from_an_API.py) to export data in the JSON format.
+Requirements:
+- Records all tasks from all employees
+- Format: `{ "USER_ID": [ {"username": "USERNAME", "task": "TASK_TITLE", "completed": TASK_COMPLETED_STATUS}, {"username": "USERNAME", "task": "TASK_TITLE", "completed": TASK_COMPLETED_STATUS}, ... ], "USER_ID": [ {"username": "USERNAME", "task": "TASK_TITLE", "completed": TASK_COMPLETED_STATUS}, {"username": "USERNAME", "task": "TASK_TITLE", "completed": TASK_COMPLETED_STATUS}, ... ]}`
+- File name: `todo_all_employees.json`
