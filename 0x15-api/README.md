@@ -18,3 +18,10 @@ Requirements:
 - Records all tasks that are owned by this employee
 - Format: `"USER_ID","USERNAME","TASK_COMPLETED_STATUS","TASK_TITLE"`
 - File name: `USER_ID.csv`
+
+#### Task 2
+[2-export_to_JSON.py](2-export_to_JSON.py) is Python script that extends [0-gather_data_from_an_API.py](0-gather_data_from_an_API.py) to export data in the JSON format.
+Requirements:
+- Records all tasks that are owned by this employee
+- Format: `{ "USER_ID": [{"task": "TASK_TITLE", "completed": TASK_COMPLETED_STATUS, "username": "USERNAME"}, {"task": "TASK_TITLE", "completed": TASK_COMPLETED_STATUS, "username": "USERNAME"}, ... ]}`
+- File name: `USER_ID.json`
