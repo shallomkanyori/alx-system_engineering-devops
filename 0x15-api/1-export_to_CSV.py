@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Returns information about an employee's TODO list given their ID.
+"""Retrieves and exports task data of an employee into a CSV file.
 
     Retrieves data from https://jsonplaceholder.typicode.com/.
 """
