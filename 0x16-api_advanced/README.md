@@ -20,3 +20,15 @@ Requirements:
 - Prototype: `def recurse(subreddit, hot_list=[])`
 - If not a valid subreddit, prints `None.`
 - Does not follow redirects
+
+
+#### Task 3
+[100-count.py](100-count.py) contains a function that queries the [Reddit API](https://www.reddit.com/dev/api/), parses the title of all hot articles, and prints a sorted count of given keywords (case-insensitive, delimited by spaces).
+Requirements:
+- Prototype: `def count_words(subreddit, word_list)`
+- If `word_list` contains the same word (case-insensitive), the final count is the sum of each duplicate
+- Results printed in descending order, by the count, and if the count is the same for separate keywords, they are sorted alphabetically (ascending, from A to Z). Words with no matches are skipped and not printed. Words are printed in lowercase.
+- Results are based on the number of times a keyword appears, not titles it appears in.
+- `java.` or `java!` or `java_` are not counted as `java`
+- If no posts match or the subreddit is invalid, prints nothing.
+- Does not follow redirects
