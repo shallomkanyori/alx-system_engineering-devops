@@ -20,14 +20,16 @@ def recurse(subreddit, hot_list=[], after=None):
     if res.status_code == 200:
         try:
             res = res.json()
-            hot_list.extend([post['data']['title'] for post
-                            in res['data']['children']])
+            hot_list.extend(map(lambda p: p['data']['title'],
+                            res['data']['children']))
             if res['data']['after']:
-                sleep(6)
+                sleep(7)
                 return recurse(subreddit, hot_list, res['data']['after'])
             else:
                 return hot_list if hot_list else None
         except Exception as e:
+            print("Exception: ", e)
             return None
     else:
+        print("Status code: ", res.status_code)
         return None
