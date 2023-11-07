@@ -23,10 +23,10 @@ def recurse(subreddit, hot_list=[], after=None):
             hot_list.extend([post['data']['title'] for post
                             in res['data']['children']])
             if res['data']['after']:
-                sleep(10)
+                sleep(6)
                 return recurse(subreddit, hot_list, res['data']['after'])
             else:
-                return hot_list
+                return hot_list if hot_list else None
         except Exception as e:
             return None
     else:
