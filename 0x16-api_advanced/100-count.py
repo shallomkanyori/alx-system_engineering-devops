@@ -42,6 +42,8 @@ def count_words(subreddit, wordlist, after="", count=0, word_count={}):
 
     if after is not None:
         count_words(subreddit, wordlist, after, count, word_count)
+    elif len(word_count) == 0:
+        return
     else:
         word_count = sorted(word_count.items(), key=lambda i: (-i[1], i[0]))
 
