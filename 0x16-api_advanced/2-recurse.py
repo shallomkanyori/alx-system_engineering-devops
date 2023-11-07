@@ -1,35 +1,34 @@
 #!/usr/bin/python3
 """This module contains the recurse function."""
 import requests
-from time import sleep
 
 
-def recurse(subreddit, hot_list=[], after=None):
+def recurse(subreddit, hot_list=[], after="", count=0):
     """Queries Reddit API for all hot posts' titles for a given subreddit.
     """
 
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    headers = {"user-agent": "Python:recurse_script:v1.0.0"}
+    headers = {
+            "user-agent": "Python:recurse_script:v1.0.0 (bu /u/Peace_Deer4685)"
+            }
+    payload = {
+            "after": after,
+            "count": count,
+            "limit": 100
+            }
 
-    if not after:
-        res = requests.get(url, headers=headers, allow_redirects=False)
-    else:
-        res = requests.get(url, headers=headers, params={"after": after},
-                           allow_redirects=False)
+    res = requests.get(url, headers=headers, params=payload,
+                       allow_redirects=False)
 
-    if res.status_code == 200:
-        try:
-            res = res.json()
-            hot_list.extend(map(lambda p: p['data']['title'],
-                            res['data']['children']))
-            if res['data']['after']:
-                sleep(7)
-                return recurse(subreddit, hot_list, res['data']['after'])
-            else:
-                return hot_list if hot_list else None
-        except Exception as e:
-            print("Exception: ", e)
-            return None
-    else:
-        print("Status code: ", res.status_code)
+    if res.status_code == 404:
         return None
+
+    res = res.json().get("data")
+    after = res.get("after")
+    count = res.get("count")
+    for p in res.get("children"):
+        hot_list.append(p.get("data").get("title"))
+
+    if after is not None:
+        return recurse(subreddit, hot_list, after, count)
+    return hot_list
