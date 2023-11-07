@@ -8,17 +8,16 @@ def top_ten(subreddit):
     """
 
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-    headers = {"user-agent": "Python:top_ten_script:v1.0.0"}
+    headers = {
+            "User-Agent": "Python:top_ten_script:v1.0.0 (by /u/Peace_Deer4685)"
+            }
     payload = {"limit": "10"}
     res = requests.get(url, headers=headers, params=payload,
                        allow_redirects=False)
 
-    if res.status_code == 200:
-        try:
-            res = res.json()
-            for post in res['data']['children'][:10]:
-                print(post['data']['title'])
-        except Exception as e:
-            print(None)
-    else:
+    if res.status_code == 404:
         print(None)
+    else:
+        res = res.json().get('data').get('children')
+        for p in res:
+            print(p.get('data').get('title'))
