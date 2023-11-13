@@ -38,3 +38,14 @@ Requirements:
 - `Nginx` must serve this page both locally and on its public IP on port 80
 - To test your setup you should bind `Gunicorn` to `api/v1/app.py`
 - Upload your `Nginx` config file as [4-app_server-nginx_config](4-app_server-nginx_config).
+
+#### Task 5
+Let’s serve what you built for AirBnB clone - Web dynamic on `web-01`.
+Requirements:
+- Git clone your `AirBnB_clone_v4`
+- Your `Gunicorn` instance should serve content from `web_dynamic/2-hbnb.py` on port `5003`
+- Setup `Nginx` so that the route `/` points to your `Gunicorn` instance
+- Setup `Nginx` so that it properly serves the static assets found in `web_dynamic/static/`
+- For your website to be fully functional, you will need to reconfigure `web_dynamic/static/scripts/2-hbnb.js` to the correct IP
+- `Nginx` must serve this page both locally and on its public IP and port `5003`
+- Upload your `Nginx` config as [5-app_server-nginx_config](5-app_server-nginx_config).
