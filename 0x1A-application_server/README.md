@@ -22,3 +22,10 @@ Requirements:
 - `Nginx` must serve this page both locally and on its public IP on port `80`.
 - `Nginx` should proxy requests to the process listening on port `5000`.
 - Include your `Nginx` config file as [2-app_server-nginx_config](2-app_server-nginx_config).
+
+#### Task 3
+Building on what you did in the previous tasks, let’s expand our web application by adding another service for `Gunicorn` to handle. In `AirBnB_clone_v2/web_flask/6-number_odd_or_even`, the route `/number_odd_or_even/<int:n>` should already be defined to render a page telling you whether an integer is odd or even. You’ll need to configure `Nginx` to proxy HTTP requests to the route `/airbnb-dynamic/number_odd_or_even/(any integer)` to a `Gunicorn` instance listening on port 5001. The key to this exercise is getting `Nginx` configured to proxy requests to processes listening on two different ports.
+Requirements:
+- `Nginx` must serve this page both locally and on its public IP on port `80`.
+- `Nginx` should proxy requests to the route `/airbnb-dynamic/number_odd_or_even/(any integer)` to the process listening on port `5001`.
+- Include your `Nginx` config file as [3-app_server-nginx_config](3-app_server-nginx_config).
