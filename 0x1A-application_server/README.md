@@ -15,3 +15,10 @@ Requirements:
 - The Flask application object should be called `app`.
 - You will serve the same content from the same route as in the previous task. You can verify that it’s working by binding a `Gunicorn` instance to localhost listening on port `5000` with your application object as the entry point.
 - In order to check your code, the checker will bind a `Gunicorn` instance to port `6000`, so make sure nothing is listening on that port.
+
+#### Task 2
+Building on your work in the previous tasks, configure `Nginx` to serve your page from the route `/airbnb-onepage/`
+Requirements:
+- `Nginx` must serve this page both locally and on its public IP on port `80`.
+- `Nginx` should proxy requests to the process listening on port `5000`.
+- Include your `Nginx` config file as [2-app_server-nginx_config](2-app_server-nginx_config).
