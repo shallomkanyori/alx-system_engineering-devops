@@ -49,3 +49,17 @@ Requirements:
 - For your website to be fully functional, you will need to reconfigure `web_dynamic/static/scripts/2-hbnb.js` to the correct IP
 - `Nginx` must serve this page both locally and on its public IP and port `5003`
 - Upload your `Nginx` config as [5-app_server-nginx_config](5-app_server-nginx_config).
+
+
+#### Task 6
+Once you’ve got your application server configured, you want to set it up to run by default when Linux is booted. This way when your server inevitably requires downtime (you have to shut it down or restart it for one reason or another), your `Gunicorn` process(es) will start up as part of the system initialization process, freeing you from having to manually restart them. For this we will use `systemd`.
+
+Requirements:
+- Write a `systemd` script which starts a `Gunicorn` process to serve the same content as the previous task (`web_dynamic/2-hbnb.py`)
+- The `Gunicorn` process should spawn 3 worker processes
+- The process should log errors in `/tmp/airbnb-error.log`
+- The process should log access in `/tmp/airbnb-access.log`
+- The process should be bound to port `5003`
+- Your `systemd` script should be stored in the appropriate directory on `web-01`
+- Make sure that you start the `systemd` service and leave it running
+- Upload [gunicorn.service](gunicorn.service) to GitHub
